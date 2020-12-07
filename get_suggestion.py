@@ -12,8 +12,18 @@ def main():
 
     # convert Kelvin to Fahrenheit
     temp = round((data['main']['feels_like'] - 273.15) * 9 / 5 + 32)
-    should_wear_coat = '' if temp < 32 else "don't"
-    print(f"It feels like {temp}F so {should_wear_coat} wear a coat.")
+    print(f"It feels like {temp}F")
+    if temp <= 32:
+        print('You should wear a coat')
+        if temp < 0:
+            print('also wear a cap and gloves')
+    elif 32 < temp <= 50:
+        print('You should wear long pants')
+    elif temp > 50:
+        print('You should wear shorts')
+        if temp > 90:
+            print('You should also wear a tank top')
+
+
 
 main()
-
